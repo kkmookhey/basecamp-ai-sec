@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import pytest
 import yaml
@@ -20,7 +21,7 @@ class MarkdownDoc:
     """Parsed representation of a markdown file with YAML frontmatter."""
 
     path: Path
-    frontmatter: dict
+    frontmatter: dict[str, Any]
     body: str
 
     @property
@@ -35,7 +36,7 @@ class MarkdownDoc:
     def section_body(self, h2_title: str) -> str | None:
         """Return the body text under the given H2, up to the next H2 or EOF."""
         pattern = re.compile(
-            rf"^##\s+{re.escape(h2_title)}\s*\n(.*?)(?=^##\s|\Z)",
+            rf"^##\s+{re.escape(h2_title)}\s*\r?\n(.*?)(?=^##\s|\Z)",
             re.MULTILINE | re.DOTALL,
         )
         m = pattern.search(self.body)
@@ -52,7 +53,7 @@ class MarkdownDoc:
 def parse_markdown(path: Path) -> MarkdownDoc:
     """Parse a markdown file with YAML frontmatter."""
     text = path.read_text(encoding="utf-8")
-    m = re.match(r"^---\n(.*?)\n---\n(.*)", text, flags=re.DOTALL)
+    m = re.match(r"^---\r?\n(.*?)\r?\n---\r?\n(.*)", text, flags=re.DOTALL)
     if not m:
         return MarkdownDoc(path=path, frontmatter={}, body=text)
     fm = yaml.safe_load(m.group(1)) or {}
