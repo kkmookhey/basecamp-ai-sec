@@ -1,0 +1,21 @@
+[project]
+name = "basecamp-ai-sec"
+version = "0.1.0"
+description = "Structural tests for the Basecamp AI + Cybersecurity learning map"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"
