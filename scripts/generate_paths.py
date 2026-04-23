@@ -13,6 +13,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+import yaml
+
 PATHS = [
     ("practitioner", "Practitioner",
      "You want to build, break, and secure AI systems hands-on.",
@@ -81,7 +83,18 @@ def main() -> int:
         path = paths_dir / f"{slug}.md"
         if path.exists():
             text = path.read_text(encoding="utf-8")
-            if re.search(r"^status:\s*ready\s*$", text, flags=re.MULTILINE):
+            # Parse the frontmatter properly instead of regex-matching the raw
+            # line, so that both `status: ready` and `status: "ready"` (or any
+            # other YAML-valid spelling) are recognized. Overwriting curated
+            # content because of a quoting style would be silent data loss.
+            fm_match = re.match(r"^---\r?\n(.*?)\r?\n---", text, flags=re.DOTALL)
+            fm: dict = {}
+            if fm_match:
+                try:
+                    fm = yaml.safe_load(fm_match.group(1)) or {}
+                except yaml.YAMLError:
+                    fm = {}
+            if fm.get("status") == "ready":
                 print(f"SKIP (status: ready): {path.name}", file=sys.stderr)
                 skipped += 1
                 continue

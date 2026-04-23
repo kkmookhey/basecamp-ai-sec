@@ -13,6 +13,9 @@ dev = [
 ]
 
 [tool.setuptools]
+# Prevent setuptools from auto-discovering topics/, paths/, and scripts/
+# as Python packages. This is a content repo, not a library — the only
+# Python code lives in tests/ and is invoked directly by pytest.
 packages = []
 
 [tool.pytest.ini_options]
