@@ -19,3 +19,6 @@ Thumbs.db
 # Local scratchpads
 /scratch/
 /_local/
+
+# mkdocs build output
+/site/

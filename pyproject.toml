@@ -10,6 +10,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
+    "mkdocs-material>=9.5",
 ]
 
 [tool.setuptools]

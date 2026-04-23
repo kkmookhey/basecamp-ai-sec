@@ -1,0 +1,99 @@
+site_name: Basecamp
+site_description: A curated map of the AI/cybersecurity intersection — 16 topics, 4 reading paths, every link hand-picked.
+site_url: https://kkmookhey.github.io/basecamp-ai-sec/
+repo_url: https://github.com/kkmookhey/basecamp-ai-sec
+repo_name: kkmookhey/basecamp-ai-sec
+edit_uri: edit/main/
+
+docs_dir: docs
+
+theme:
+  name: material
+  icon:
+    logo: material/terrain
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Home: index.md
+  - Paths:
+      - Practitioner: paths/practitioner.md
+      - GRC & Leadership: paths/grc.md
+      - Security Pro → AI: paths/security-to-ai.md
+      - AI Engineer → Security: paths/ai-to-security.md
+  - Topics:
+      - 01 Foundations: topics/01-foundations.md
+      - 02 Building LLM Apps: topics/02-building-llm-apps.md
+      - 03 MCP: topics/03-mcp.md
+      - 04 Prompt Injection: topics/04-prompt-injection.md
+      - 05 LLM Vulnerabilities: topics/05-llm-vulnerabilities.md
+      - 06 Agentic Security: topics/06-agentic-security.md
+      - 07 Red Teaming: topics/07-red-teaming.md
+      - 08 Attacking AI Tooling: topics/08-attacking-ai-tooling.md
+      - 09 Governance & Compliance: topics/09-governance-and-compliance.md
+      - 10 Incident Response: topics/10-incident-response.md
+      - 11 AI for SOC: topics/11-ai-for-soc.md
+      - 12 AI for Pentesting: topics/12-ai-for-pentesting.md
+      - 13 AI for Vulnerability Management: topics/13-ai-for-vulnerability-management.md
+      - 14 AI for GRC: topics/14-ai-for-grc.md
+      - 15 AI for Threat Intel: topics/15-ai-for-threat-intel.md
+      - 16 Research Frontier: topics/16-research-frontier.md
+  - Reference:
+      - Glossary: glossary.md
+      - Books & Courses: books-and-courses.md
+      - Contributing: CONTRIBUTING.md
+
+exclude_docs: |
+  README.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
