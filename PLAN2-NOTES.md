@@ -40,6 +40,18 @@ during Plan 2 content curation. Reviewed and emptied at Plan 2 DoD
 
 - Topic 05: MITRE ATLAS matrix page (atlas.mitre.org/matrices/ATLAS) — URL returns 404; the framework is accessed via the root URL (atlas.mitre.org), which is what was used.
 
+- Topic 06: KK Video 15 ("Hacking Multi-Agent AI", ~21:20) included in ## Watch with placeholder URL — KK must supply the YouTube watch?v= ID in a batch URL fix. Video 16 ("Multi-Agent Security Guide", ~12:34) investigated: content is stronger on defensive guidance than attacks; deferred rather than included because Video 15 covers the attack lens more directly and adding both would tip Watch past one entry without clear differentiation. Revisit if Video 16's URL is confirmed and an additional Watch entry is warranted.
+
+- Topic 06: Anthropic computer-use docs URL (docs.anthropic.com/en/docs/agents-and-tools/computer-use) returns HTTP 301 to platform.claude.com during research; the docs.anthropic.com URL is the canonical public-facing one and is what should be linked. If the redirect destination changes, update the link to match the canonical Anthropic docs domain at that time.
+
+- Topic 06: arxiv paper "Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges" (2510.23883, Chhabra et al., IEEE Access Apr 2026) investigated as a Go deeper candidate. Excluded: the six-threat taxonomy is survey-level and does not add a distinct analytic contribution beyond what the de Witt (2505.02077) and Trust Paradox (2510.18563) papers provide in a more focused form. Retain as a candidate if either of those papers is later displaced.
+
+- Topic 06: "Unseeable prompt injections in screenshots" (simonwillison.net/2025/Oct/21/unseeable-prompt-injections/) investigated as a companion to the Aug 2025 Agentic Browser Security post. Excluded as a second Willison browser-agent entry: both make the same architectural argument (agentic browsers are structurally vulnerable to prompt injection in content). The Aug post is chosen because it is the first and more concise statement; the Oct post extends with additional vendors but does not change the core claim.
+
+- Topic 06: OWASP Agentic Security Initiative landing page (genai.owasp.org/initiatives/agentic-security-initiative/) is the parent page for the Top 10 for Agentic Applications. Linked directly to the resource page (genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) rather than the initiative page, as the resource page is the citable deliverable.
+
+- Topic 06: CSA Agentic Red Teaming Guide investigated per seed hints. Confirmed it belongs more in topic 07 (red teaming methodology) than topic 06 (agentic threat taxonomy). Did not include in topic 06; flag for topic 07 curation.
+
 ## Tools / links investigated but rejected
 
 - Topic 02: Microsoft AutoGen (github.com/microsoft/autogen) — as of September 2025 the repo entered maintenance mode (v0.7.5 final). Microsoft explicitly recommends new users adopt their successor "Microsoft Agent Framework." Excluded: a deprecated framework is not the right tool reference for a builder who wants to ship in 2025–2026.
