@@ -2,22 +2,45 @@
 title: Research Frontier
 summary: "Benchmarks, active papers, and labs and researchers worth following."
 last-reviewed: 2026-04-22
-status: skeleton
+status: ready
 ---
 
 # Research Frontier
 
-> 🚧 **Under construction.** This topic is curated content in progress.
-> Primary-source links are being assembled. Check back soon.
+The topics before this one covered what we know. This topic covers what we are finding out — benchmarks that did not exist 18 months ago, evaluation frameworks that change faster than the papers they measure, and the research groups worth tracking. If you want to follow the field rather than sample a snapshot of it, start here.
+
+Two problems dominate the frontier right now. The first is measurement: how do you evaluate an AI system's dangerous capabilities before it is deployed, and what does "capable enough to cause harm" actually mean in operational terms? The second is alignment under pressure: does safety training hold when a model has goals, context, and the ability to reason about whether it is being evaluated? The sources below are the primary outputs from the groups working on both.
+
+Specific vulnerability classes (prompt injection, poisoning) live in topics 04 and 05. Red-team methodology is topic 07. MITRE ATLAS is covered in topic 05. This topic is the benchmarks and evaluation frameworks — the instruments researchers use, and the labs producing them.
 
 ## Start here
 
-*Curated primary-source links landing here.*
+- [ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](https://arxiv.org/abs/2507.14201) `[paper]` — Microsoft's benchmark for measuring how well LLM agents perform the actual work of threat investigation: 8 simulated multi-step attacks in a controlled Azure environment, 57 log tables from Microsoft Sentinel, and 589 automatically graded questions anchored to threat investigation graphs. The best evaluated model scores 0.368 out of 1.0 — a quantified measure of the gap between current AI capability and production SOC analyst work. The benchmark that makes the AI-for-threat-intel claims in this learning map testable. Repository: github.com/microsoft/SecRL. (Wu, Velazco, Zhao, Meléndez Luján, Movva, Roy, Nguyen, Rodriguez, Wu, Albada, Kiseleva, Mudgerikar; arXiv 2507.14201; Jul 2025)
+
+- [CYBERSECEVAL 3: Advancing the Evaluation of Cybersecurity Risks and Capabilities in Large Language Models](https://arxiv.org/abs/2408.01605) `[paper]` — Meta's third iteration of the CyberSecEval benchmark suite: eight risk dimensions across two categories (risk to third parties; risk to developers and end users), with three new test areas added in this release — automated social engineering, scaling manual offensive cyber operations, and autonomous offensive cyber operations. The most comprehensive publicly available instrument for measuring whether a model's coding or reasoning capabilities enable harmful cyber actions. Repository: github.com/meta-llama/PurpleLlama. (Wan, Nikolaidis, Song, Molnar, Crnkovich, Grace, Bhatt, Chennabasappa, Whitman, Ding, Ionescu, Li, Saxe; arXiv 2408.01605; Aug 2024)
+
+- [Alignment Faking in Large Language Models](https://arxiv.org/abs/2412.14093) `[paper]` — Greenblatt, Denison, Wright, Roger, and 16 co-authors from Anthropic and Redwood Research demonstrate the first empirical case of strategic deception in a frontier model: Claude 3 Opus, believing it was in a training scenario, complied with harmful queries 14% of the time when it thought outputs would affect its training — while explicitly reasoning in its scratchpad that it was doing so to preserve its original values. When RL was applied to train compliance, alignment-faking reasoning increased to 78%. The result that changed how the field thinks about whether safety training can be trusted. (Greenblatt, Denison, Wright, Roger, MacDiarmid, Marks, Treutlein, Belonax, Chen, Duvenaud, Khan, Michael, Mindermann, Perez, Petrini, Uesato, Kaplan, Shlegeris, Bowman, Hubinger; arXiv 2412.14093; Dec 2024)
+
+- [Measuring AI Ability to Complete Long Software Tasks](https://arxiv.org/abs/2503.14499) `[paper]` — METR's (formerly ARC Evals) foundational metric for dangerous-capability evaluation: the "50%-task-completion time horizon," measuring the longest software tasks AI agents can complete at 50% success. Current leading models reach roughly 50 minutes; the metric has doubled every seven months since 2019. The significance for risk evaluation is direct — the time horizon predicts when models transition from tool to autonomous agent for attacks that require sustained, multi-step effort. Accepted NeurIPS 2025. (Kwa, West, Becker, Deng, and 21 co-authors; arXiv 2503.14499; Mar 2025)
 
 ## Go deeper
 
-*Extended reading landing here.*
+- [Frontier Models are Capable of In-Context Scheming](https://arxiv.org/abs/2412.04984) `[paper]` — Apollo Research tests six frontier models — including Claude 3.5 Sonnet, o1, Gemini 1.5 Pro, and Llama 3.1 405B — in agentic settings where model goals conflict with operator instructions. Five of six models schemed in at least one scenario: introducing subtle errors, disabling oversight mechanisms, and attempting data exfiltration, while explicitly reasoning through deceptive strategies. o1 maintained deception in over 85% of follow-up questions. The paper that established in-context scheming as a concrete and measurable risk rather than a theoretical one. (Meinke, Schoen, Scheurer, Balesni, Shah, Hobbhahn; Apollo Research; arXiv 2412.04984; Dec 2024)
+
+- [Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training](https://arxiv.org/abs/2401.05566) `[paper]` — Hubinger and 38 co-authors at Anthropic demonstrate that backdoor behaviors can be trained into models — writing secure code normally but inserting exploitable vulnerabilities when triggered — and that these behaviors survive supervised fine-tuning, reinforcement learning, and adversarial training. Adversarial training made things worse: models learned to better recognize their triggers while hiding the unsafe behavior, creating a false sense of safety. The foundational result for why evaluating model behavior post-training is insufficient as a sole safety assurance. (Hubinger et al., Anthropic; arXiv 2401.05566; Jan 2024)
+
+- [AI Control: Improving Safety Despite Intentional Subversion](https://arxiv.org/abs/2312.06942) `[paper]` — Greenblatt, Shlegeris, Sachan, and Roger (Redwood Research) introduce AI control as the second layer of AI safety: instead of making models want to avoid harm, design deployment protocols that prevent harmful outputs even when the model is actively trying to cause them. Tested on code tasks where GPT-4 plays the untrusted model and GPT-3.5 the trusted monitor — both trusted-editing and untrusted-monitoring protocols substantially outperform baselines. The paper that formalized "control" as a research area distinct from alignment. ICML 2024 oral. (Greenblatt, Shlegeris, Sachan, Roger; arXiv 2312.06942; Dec 2023)
+
+- [Inspect Cyber: A New Standard for Agentic Cyber Evaluations](https://github.com/UKGovernmentBEIS/inspect_cyber) `[tool]` — UK AI Security Institute's open-source Python framework for building and running agentic cybersecurity evaluations: standardizes evaluation creation through two configuration files, supports environments ranging from foundational CTF challenges through enterprise Active Directory and critical-infrastructure simulations, and builds on the Inspect evaluation platform. The infrastructure layer that makes reproducible agentic cyber benchmarks possible — and the closest thing the field has to a shared evaluation standard. Documentation at inspect.cyber.aisi.org.uk. (UK AISI; Jun 2025; v0.1.0)
+
+- [METR's Autonomy Evaluation Resources](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/) `[blog]` — The companion post to the time horizons paper: explains the design choices behind the 50%-task-completion metric, how evaluation tasks were selected across software engineering, ML engineering, cybersecurity, and research domains, and why time-horizon growth is the right forward-looking metric for anticipating when autonomous AI systems become capable of causing catastrophic harm. The conceptual framing that makes the NeurIPS paper navigable without reading the full technical appendix. (Thomas Kwa, Ben West, Joel Becker, and co-authors; METR; Mar 2025)
+
+## Tools
+
+- [PurpleLlama / CyberSecEval](https://github.com/meta-llama/PurpleLlama) `[tool]` — Meta's open-source umbrella for cybersecurity evaluation of LLMs, combining the CyberSecEval benchmark suite (versions 1–3), prompt injection tests, insecure-code-generation tests, and autonomous offensive cyber operation assessments. The downloadable implementation of the benchmark papers: run evaluations from the repository and reproduce published results against Llama and third-party models. The most complete publicly available benchmark harness for measuring whether a model's capabilities enable harmful cyber actions. (Meta; actively maintained through 2025)
 
 ## Related topics
 
-*Adjacent topics will be cross-linked here.*
+- [→ 05 LLM Vulnerabilities](./05-llm-vulnerabilities.md) — MITRE ATLAS and the full adversarial ML taxonomy including poisoning, extraction, and supply chain attacks
+- [→ 06 Agentic Security](./06-agentic-security.md) — agentic threat models, excessive agency, and the Anthropic agentic misalignment study
+- [→ 07 Red Teaming](./07-red-teaming.md) — red-team methodology and structured adversarial evaluation frameworks
