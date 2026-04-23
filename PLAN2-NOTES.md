@@ -6,7 +6,9 @@ during Plan 2 content curation. Reviewed and emptied at Plan 2 DoD
 
 ## Deferred judgment calls
 
-*(entries added as they arise)*
+- Topic 01: Lilian Weng's *LLM Powered Autonomous Agents* is a survey of others' agent papers, not original research — yet it's the canonical reference architecture in the field. Decided: include as primary. Reason: CONTRIBUTING.md's table says "The researcher's own blog post on their own work → primary"; Weng wrote this as her own synthesis and framework from her position as an AI researcher — it's her intellectual contribution, not a recap of a single paper's work. Comparable to a professor's own textbook chapter.
+- Topic 01: KK Video 1 — "AI & Cybersecurity: An Introduction" (12 min). Decided: include in Watch. Reason: general-AI primers (3Blue1Brown, Alammar) cover transformer mechanics better; KK's video uniquely frames the same foundations through an explicit security-practitioner lens, answering "why do these components matter for attacks and defenses?" No comparable primary source exists for this specific angle at introductory level.
+- Topic 01: Chip Huyen *AI Engineering* Ch1 and Sebastian Raschka *Build a Large Language Model* Ch1 are both behind paywalls (O'Reilly and Manning respectively). Decided: include the official GitHub companion repos instead (chiphuyen/aie-book and rasbt/LLMs-from-scratch), which are free, open, and maintained by the same authors. This preserves the primary-source bar while satisfying the accessibility criterion.
 
 ## Scope questions raised during research
 
