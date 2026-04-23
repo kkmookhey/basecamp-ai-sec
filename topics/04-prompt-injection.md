@@ -15,11 +15,11 @@ The vulnerability class splits into three sub-types that require separate defens
 
 - [Prompt injection attacks against GPT-3](https://simonwillison.net/2022/Sep/12/prompt-injection/) `[blog]` — The post that named the vulnerability class: Willison demonstrates how user input concatenated into a GPT-3 prompt can override the application's system instructions, drawing the explicit analogy to SQL injection and coining the term that the field now uses. Required reading before any other source here. (Simon Willison, Sep 2022)
 
-- [Prompt injection: What's the worst that can happen?](https://simonwillison.net/2023/Apr/14/prompt-injection/) `[blog]` — Willison's threat-modelling companion to the 2022 post: shows how indirect injection — malicious instructions embedded in web pages, emails, or documents an agent reads — enables data exfiltration, social engineering, and agent hijacking, concluding that no defense is guaranteed to hold 100% of the time. (Simon Willison, Apr 2023)
+- [Prompt injection: What's the worst that can happen?](https://simonwillison.net/2023/Apr/14/prompt-injection-worst-case/) `[blog]` — Willison's threat-modelling companion to the 2022 post: shows how indirect injection — malicious instructions embedded in web pages, emails, or documents an agent reads — enables data exfiltration, social engineering, and agent hijacking, concluding that no defense is guaranteed to hold 100% of the time. (Simon Willison, Apr 2023)
 
 - [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/abs/2302.12173) `[paper]` — The academic paper that formalised indirect prompt injection: Greshake et al. demonstrate data theft, self-propagating "worms," ecosystem contamination, and arbitrary code execution-like behavior via poisoned data sources, validated against Bing Chat and custom GPT-4 applications. The reference for anyone who needs the attack taxonomy in peer-reviewed form. (Greshake, Abdelnabi, Mishra, Endres, Holz, Fritz; Feb 2023)
 
-- [AI Injections: Direct and Indirect Prompt Injections and Their Implications](https://embracethered.com/blog/posts/2023/ai-injections-direct-and-indirect-prompt-injections-and-their-implications/) `[blog]` — Rehberger's practitioner taxonomy of the full injection space: direct injections (jailbreaks that read or override system prompts), second-order injections (poisoned data the AI consumes), and cross-context injections (data co-mingling across sessions). Bridges Willison's framing to concrete attack patterns. (Johann Rehberger / Embrace The Red, Mar 2023)
+- [AI Injections: Direct and Indirect Prompt Injections and Their Implications](https://embracethered.com/blog/posts/2023/ai-injections-direct-and-indirect-prompt-injection-basics/) `[blog]` — Rehberger's practitioner taxonomy of the full injection space: direct injections (jailbreaks that read or override system prompts), second-order injections (poisoned data the AI consumes), and cross-context injections (data co-mingling across sessions). Bridges Willison's framing to concrete attack patterns. (Johann Rehberger / Embrace The Red, Mar 2023)
 
 ## Go deeper
 
@@ -34,10 +34,6 @@ The vulnerability class splits into three sub-types that require separate defens
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) `[paper]` — The foundational GCG jailbreak paper: Zou et al. automatically generate adversarial suffixes via greedy coordinate gradient search that bypass refusal training and transfer across models (GPT-4, Claude, LLaMA-2, Falcon). Establishes why jailbreaks cannot be patched with simple input filters — the attack surface is in the model weights. (Zou, Wang, Carlini, Nasr, Kolter, Fredrikson; Jul 2023)
 
 - [Death by a Thousand Prompts: Open Model Vulnerability Analysis](https://arxiv.org/abs/2511.03247) `[paper]` — The multi-turn jailbreak study: Chang et al. benchmark eight open-weight LLMs and find multi-turn attacks achieve 25.86%–92.78% success — a 2×–10× increase over single-turn baselines — because models cannot maintain safety guardrails across extended interactions. Directly motivates per-turn filtering being insufficient as a sole defense. (Chang, Conley, Santhanalakshmi Ganesan, Swanda; Nov 2025)
-
-## Watch
-
-- [Chapter 3: Hacking Chatbots — Prompt Injection & Security Testing](https://www.youtube.com/watch?v=lYg_8Dm0BFo) `[video]` — Hands-on applied counterpart to Willison's theoretical posts: live exploitation of direct and indirect injection, demonstration of defense architectures in practice. Included because the primary written sources (Willison, Greshake) are analytical; this is the practitioner walkthrough of what exploitation and mitigation look like end-to-end. (KK Mookhey / Transilience AI, 2025, 25 min)
 
 ## Related topics
 
