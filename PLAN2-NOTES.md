@@ -12,11 +12,15 @@ during Plan 2 content curation. Reviewed and emptied at Plan 2 DoD
 
 ## Scope questions raised during research
 
-*(entries added as they arise)*
+- Topic 02: Where does the Anthropic "Building Effective Agents" post belong — topic 01 (foundations) already includes it. Decided: include in topic 02 as well. Reason: the post is the canonical first-principles source for the builder's topic; topic 01 uses it to build a mental model of agent layers, topic 02 uses it as the builder's design reference. Same source, different lens. Not a duplication problem when the topic purpose differs.
+- Topic 02: KK videos — per PLAN2-VIDEO-MAP.md, Videos 2, 3, and 6 were all candidates. Video 2 (first RAG app) competes directly with LlamaIndex/LangChain primary docs which are stronger. Video 3 (RAG hallucination) features Transilience demo — excluded per policy. Video 6 (building agentic app) tilts security — excluded, belongs in topic 06. Decision: no Watch section in topic 02; primary sources are sufficient and better.
 
 ## Tools / links investigated but rejected
 
-*(entries added as they arise)*
+- Topic 02: Microsoft AutoGen (github.com/microsoft/autogen) — as of September 2025 the repo entered maintenance mode (v0.7.5 final). Microsoft explicitly recommends new users adopt their successor "Microsoft Agent Framework." Excluded: a deprecated framework is not the right tool reference for a builder who wants to ship in 2025–2026.
+- Topic 02: Meta "Agents Rule of Two: A Practical Approach to AI Agent Security" (ai.meta.com/blog/practical-ai-agent-security/, Oct 2025) — confirmed primarily security-focused (the Rule of Two is about mitigating prompt injection risk, not about building patterns). Excluded from topic 02. Goes to topic 06 (agentic security).
+- Topic 02: LangChain conceptual docs (docs.langchain.com) — LangChain itself is now mostly a thin wrapper that routes to LangGraph; the docs site redirected and focuses on the LangGraph runtime for agent work. Excluded: LangGraph (already included) is the more specific, primary reference for the stateful-agent use case. Including both would be redundant.
+- Topic 02: LlamaIndex "Introduction to RAG" page (developers.llamaindex.ai/python/framework/understanding/rag/) — covers the same conceptual territory as "Building RAG from scratch" but at a higher level of abstraction. Excluded in favor of the more mechanistic "from scratch" page which better serves the builder who wants to understand internals.
 
 ---
 
