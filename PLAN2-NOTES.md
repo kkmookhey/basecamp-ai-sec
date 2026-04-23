@@ -28,6 +28,18 @@ during Plan 2 content curation. Reviewed and emptied at Plan 2 DoD
 
 - Topic 04: arxiv 2403.02691 (InjecAgent, Mar 2024) — "Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents." Investigated. Strong paper: 1,054 test cases, 30 LLMs tested, ReAct-prompted GPT-4 vulnerable in ~24% of cases. Excluded: the Go deeper section is already at 5 entries (OWASP, Google, Anthropic, GCG, multi-turn); adding a 6th benchmark paper tips the section toward academic rather than practitioner. Retain as a candidate if the multi-turn paper (2511.03247) is later displaced.
 
+- Topic 05: OWASP LLM08:2025 Vector and Embedding Weaknesses (genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/) — investigated as a Go deeper candidate. Excluded: the three OWASP individual entries already included (LLM02, LLM03, LLM04) cover the training-time and data-integrity threat surface; LLM08 addresses RAG-specific retrieval attacks that belong more naturally adjacent to topic 06 (agentic/RAG security). A fourth OWASP sub-entry would tip the section toward OWASP recaps rather than diverse source types.
+
+- Topic 05: Carlini 2021 "Extracting Training Data from Large Language Models" (arxiv.org/abs/2012.07805, USENIX Security 2021) — investigated as a Go deeper candidate. Excluded in favor of the 2023 follow-up (arxiv.org/abs/2311.17035, "Scalable Extraction from Production Language Models") which demonstrates the same attack class at production scale against ChatGPT with a 150× amplification effect. The 2023 paper is strictly more impactful and more relevant to current deployment context. The 2021 paper remains the canonical founding reference but the 2023 paper is the stronger "go deeper" pick.
+
+- Topic 05: HuggingFace "2024 Security Feature Highlights" (huggingface.co/blog/2024-security-features, Aug 2024) — investigated as a supply-chain source. Excluded: the post covers Hub access controls, 2FA, commit signing, and pickle scanning at a feature-announcement level — useful operational reference but not a primary vulnerability research source. The "4M Models Scanned" post (selected) is a better primary-source fit because it reports empirical threat data rather than feature announcements.
+
+- Topic 05: HuggingFace + JFrog partnership post (huggingface.co/blog/jfrog, Mar 2025) — investigated as a supply-chain source. Excluded: coverage of the same supply-chain-scanning concern is more empirically grounded in the Protect AI "4M Models Scanned" post (selected). The JFrog post is a product-launch announcement describing scanner integration rather than threat research; secondary to the Protect AI 6-month findings report.
+
+- Topic 05: "Are aligned neural networks adversarially aligned?" Carlini et al. (arxiv.org/abs/2306.15447, NeurIPS 2023) — investigated as a Go deeper candidate for the model-alignment safety angle. Excluded: scope is primarily about whether RLHF alignment holds under adversarial image perturbations in multimodal models — closer to topic 07 (red teaming) or topic 16 (research frontier) than the training-time and supply-chain remit of topic 05.
+
+- Topic 05: MITRE ATLAS matrix page (atlas.mitre.org/matrices/ATLAS) — URL returns 404; the framework is accessed via the root URL (atlas.mitre.org), which is what was used.
+
 ## Tools / links investigated but rejected
 
 - Topic 02: Microsoft AutoGen (github.com/microsoft/autogen) — as of September 2025 the repo entered maintenance mode (v0.7.5 final). Microsoft explicitly recommends new users adopt their successor "Microsoft Agent Framework." Excluded: a deprecated framework is not the right tool reference for a builder who wants to ship in 2025–2026.
