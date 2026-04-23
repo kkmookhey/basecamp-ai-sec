@@ -49,6 +49,9 @@ TOPICS = [
      "Benchmarks, active papers, and labs and researchers worth following."),
 ]
 
+# Summary is double-quoted because some summaries contain a colon-space sequence
+# (e.g. topic 11's "operations: alert triage..."), which unquoted YAML would parse
+# as a nested mapping. Keep all summaries in TOPICS free of embedded double quotes.
 SKELETON = """\
 ---
 title: {title}
