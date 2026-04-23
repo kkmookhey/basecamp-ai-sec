@@ -70,8 +70,8 @@ status: skeleton
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
-    paths_dir = root / "paths"
-    paths_dir.mkdir(exist_ok=True)
+    paths_dir = root / "docs" / "paths"
+    paths_dir.mkdir(parents=True, exist_ok=True)
     gitkeep = paths_dir / ".gitkeep"
     if gitkeep.exists():
         gitkeep.unlink()

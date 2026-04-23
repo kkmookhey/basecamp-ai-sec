@@ -83,8 +83,8 @@ status: skeleton
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
-    topics_dir = root / "topics"
-    topics_dir.mkdir(exist_ok=True)
+    topics_dir = root / "docs" / "topics"
+    topics_dir.mkdir(parents=True, exist_ok=True)
     # Remove the .gitkeep once real files exist
     gitkeep = topics_dir / ".gitkeep"
     if gitkeep.exists():

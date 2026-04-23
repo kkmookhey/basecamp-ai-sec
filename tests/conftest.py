@@ -11,8 +11,9 @@ import pytest
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-TOPICS_DIR = REPO_ROOT / "topics"
-PATHS_DIR = REPO_ROOT / "paths"
+DOCS_DIR = REPO_ROOT / "docs"
+TOPICS_DIR = DOCS_DIR / "topics"
+PATHS_DIR = DOCS_DIR / "paths"
 README = REPO_ROOT / "README.md"
 
 
