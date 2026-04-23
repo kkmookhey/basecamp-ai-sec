@@ -1,0 +1,35 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/
+
+# Check anchors on same-repo markdown as well as external URLs
+include_fragments = true
+
+# Exclude patterns we don't want to check
+exclude = [
+    # Local loopback / reserved hosts
+    "^https?://(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)",
+    # Known flaky on CI
+    "^https?://(www\\.)?linkedin\\.com/",
+    "^https?://(x|twitter)\\.com/",
+]
+
+# Accepted status codes
+accept = [
+    200, 201, 202, 203, 204, 206,
+    301, 302, 303, 307, 308,
+]
+
+# Retries for transient failures
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+
+# Skip checking these file paths
+exclude_path = [
+    ".venv",
+    ".pytest_cache",
+    "__pycache__",
+    "scripts",
+]
+
+verbose = "info"
