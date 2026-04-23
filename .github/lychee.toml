@@ -32,4 +32,4 @@ exclude_path = [
     "scripts",
 ]
 
-verbose = "verbose"
+verbose = "info"
