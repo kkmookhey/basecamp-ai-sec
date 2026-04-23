@@ -33,7 +33,7 @@ Tools (PyRIT, DeepTeam) are in topic 08. Specific attack techniques live in topi
 
 ## Watch
 
-- **KK's "Red Teaming Agentic AI" three-part series (~66 min total)** `[video]` — Practitioner-level walkthrough of adversarial evaluation of agentic AI systems across three sessions: scoping the agentic attack surface, running structured red team exercises against agent workflows, and documenting findings in a repeatable framework. The most thorough publicly available hands-on red-teaming walkthrough for agentic systems. *URL pending — add via batch fix.*
+- [Chapter 5: Red Teaming Agentic AI — Part 1](https://www.youtube.com/watch?v=te-qix6B5R4), [Part 2](https://www.youtube.com/watch?v=sMoyDjw5KT4), and [Part 3](https://www.youtube.com/watch?v=jbnUVTJZ3qc) `[video]` — Practitioner-level walkthrough of adversarial evaluation of agentic AI systems across three sessions: scoping the agentic attack surface (Part 1), running structured red team exercises against agent workflows (Part 2), and synthesizing findings into remediation strategies (Part 3). The most thorough publicly available hands-on red-teaming walkthrough for agentic systems. (KK Mookhey / Transilience AI, ~66 min total)
 
 ## Related topics
 

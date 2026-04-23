@@ -35,6 +35,10 @@ The vulnerability class splits into three sub-types that require separate defens
 
 - [Death by a Thousand Prompts: Open Model Vulnerability Analysis](https://arxiv.org/abs/2511.03247) `[paper]` — The multi-turn jailbreak study: Chang et al. benchmark eight open-weight LLMs and find multi-turn attacks achieve 25.86%–92.78% success — a 2×–10× increase over single-turn baselines — because models cannot maintain safety guardrails across extended interactions. Directly motivates per-turn filtering being insufficient as a sole defense. (Chang, Conley, Santhanalakshmi Ganesan, Swanda; Nov 2025)
 
+## Watch
+
+- [Chapter 3: Hacking Chatbots — Prompt Injection & Security Testing](https://www.youtube.com/watch?v=lQpgOrhnX_g) `[video]` — Hands-on applied counterpart to the Willison theoretical corpus: live exploitation of a RAG chatbot (basic injection, document-based injection, DAN-style jailbreaks, data-leakage exploits) followed by a two-stage guardrail defense architecture (few-shot safety classification + conditional execution) tested against the same attack vectors. Fills the gap between reading about prompt injection and seeing it executed end-to-end. (KK Mookhey / Transilience AI, 25 min)
+
 ## Related topics
 
 - [→ 05 LLM Vulnerabilities](./05-llm-vulnerabilities.md)

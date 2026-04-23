@@ -35,7 +35,7 @@ Readers arriving here should know topic 04 (prompt injection as an input attack)
 
 ## Watch
 
-- **Hacking Multi-Agent AI** (KK, ~21 min) — Hands-on walkthrough of attacks against multi-agent systems: how inter-agent trust is exploited, how tool-call chains enable privilege escalation across agent boundaries, and live demonstrations of cascading failure scenarios. Practitioner-level coverage that the primary written literature on multi-agent attacks does not yet match in accessibility. *(URL not recorded — KK to supply in batch URL fix; see PLAN2-NOTES.md)*
+- [Chapter 7.2: Hacking Multi-Agent AI Systems — Breaking Your AI Agent Crew](https://www.youtube.com/watch?v=_m_U83XMqJQ) `[video]` — Hands-on walkthrough of attacks against multi-agent systems: how inter-agent trust is exploited, how tool-call chains enable privilege escalation across agent boundaries, and live demonstrations of cascading failure scenarios. Practitioner-level coverage that the primary written literature on multi-agent attacks does not yet match in accessibility. (KK Mookhey / Transilience AI, ~21 min)
 
 ## Related topics
 
