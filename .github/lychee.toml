@@ -19,6 +19,10 @@ accept = [
     301, 302, 303, 307, 308,
 ]
 
+# Identify as a polite browser-compatible client. Some CDNs
+# (observed: techcommunity.microsoft.com) 403 the default lychee UA.
+user_agent = "Mozilla/5.0 (compatible; basecamp-ai-sec-linkcheck/1.0; +https://github.com/kkmookhey/basecamp-ai-sec)"
+
 # Retries for transient failures
 max_retries = 3
 retry_wait_time = 2
