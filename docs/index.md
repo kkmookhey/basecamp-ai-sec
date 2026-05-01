@@ -1,4 +1,7 @@
 # Basecamp
+
+> Built by [KK Mookhey](https://www.linkedin.com/in/kkmookhey) — Co-Founder of [Transilience AI](https://transilience.ai), the Full Stack Security OS.
+
 ### Your foundation for AI + Cybersecurity
 
 *A curated map of the AI/cybersecurity intersection — 16 topics, 4 reading paths, every link hand-picked.*
